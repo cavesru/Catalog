@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title_block %}
+	Cave
+{% endblock %}
+
+{% block container_block %}
+
+	<div class="panel panel-default">
+	  <div class="panel-heading">Список пещер</div>
+  	
+		{% if object_list %}
+		<table class="table table-striped">
+			{% for object in object_list %}
+			<tr>
+				<td><a href="{% url 'object_view' pk=object.pk %}">{{object.name}}</a></td>
+				<td>{{object.length}}</td>
+			</tr>
+			{% endfor %}
+		</table>
+		{% endif %}
+
+    </div> 
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title_block %}
+	Альбом
+{% endblock %}
+
+{% block container_block %}
+    <div class="container">
+    
+        <div class="page-header">  		
+        	<h1>{{ album.name }}</h1>
+        </div>
+        
+        <div class="row">
+        {% for photo in album.photo.all %}
+  		<div class="col-sm-6 col-md-3">
+    		<a href="{{ photo.photo.url }}" class="thumbnail">
+    			<img src="{{ photo.thumb.url }}" alt="{{ photo.thumb }}">
+    		</a>
+  		</div>        	
+        {% endfor %}
+        </div>
+        
+    </div> <!-- /container -->  
+        
+{% endblock %}

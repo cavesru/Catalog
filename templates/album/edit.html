@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title_block %}
+	Редактировать альбом
+{% endblock %}
+
+
+{% block container_block %}
+    <div class="container">
+
+		<div class="page-header">  
+			<h1>Редактировать альбом</h1>
+		</div>
+		
+		<form method="POST" role="form">{% csrf_token %}
+			{{ album|crispy }}
+			<input class="btn btn-default" type="submit" value="Сохранить" />
+		</form>
+
+    </div> <!-- /container -->   
+{% endblock %}
